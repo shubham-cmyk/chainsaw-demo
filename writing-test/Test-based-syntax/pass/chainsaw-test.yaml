@@ -9,7 +9,7 @@ spec:
     - create:
         file: pod.yaml
     - assert:
-        file: verify-pod.yaml
+        file: "https://raw.githubusercontent.com/shubham-cmyk/chainsaw-demo/master/writing-test/Test-based-syntax/pass/verify-pod.yaml"
       timeout: 10s
   - name: deploy-setup
     try:
