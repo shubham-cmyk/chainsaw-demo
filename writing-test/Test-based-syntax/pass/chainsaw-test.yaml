@@ -1,7 +1,7 @@
 apiVersion: chainsaw.kyverno.io/v1alpha1
 kind: Test
 metadata:
-  name: fail
+  name: pass
 spec:
   steps:
   - name: pod-setup
@@ -9,12 +9,10 @@ spec:
     - create:
         file: pod.yaml
     - assert:
-        file: "https://raw.githubusercontent.com/shubham-cmyk/chainsaw-demo/master/writing-test/Test-based-syntax/pass/verify-pod.yaml"
-      timeout: 10s
+        file: verify-pod.yaml
   - name: deploy-setup
     try:
     - create:
         file: deploy.yaml
     - assert:
         file: verify-deploy.yaml
-      timeout: 10s
